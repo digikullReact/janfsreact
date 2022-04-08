@@ -4,6 +4,8 @@ import './App.css'
 import Home from './components/Home'
 import About from './components/About'
 import Header from './components/Header'
+import Show from './components/Show'
+import Todo from './components/Todo'
 
 function App() {
 
@@ -12,7 +14,15 @@ function App() {
     <div className="App">
      
 
-      <Home/>
+     {
+       /**
+        *  <Home/>
+        *     <Show/>
+        */
+     }
+
+     <Todo/>
+  
      
  
     </div>
