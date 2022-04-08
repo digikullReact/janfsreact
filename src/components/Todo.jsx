@@ -7,7 +7,9 @@ const Todo = () => {
      */
     const [state,setState] =useState({
         task:"",
-        date:""
+        date:"",
+        creator:"",
+        duration:""
     })
 
     const [tasks,setTasks]=useState([]);
@@ -31,8 +33,10 @@ const Todo = () => {
         */
        setTasks([...tasks,state]);
        setState({
-           task:"",
-           date:""
+        task:"",
+        date:"",
+        creator:"",
+        duration:""
        })
 
     }
@@ -55,7 +59,10 @@ const Todo = () => {
             <div className='col-4 offset-4'>
 
             <input type="text" name='task' value={state.task} className='form-control' placeholder='Task' onChange={handleChange}/><br/>
-            <input type="date"  name='date' value={state.date} className='form-control' placeholder='Date' onChange={handleChange}/>
+            <input type="date"  name='date' value={state.date} className='form-control' placeholder='Date' onChange={handleChange}/><br/>
+            <input type="creator"  name='creator' value={state.creator} className='form-control' placeholder='Date' onChange={handleChange}/><br/>
+            <input type="duration"  name='duration' value={state.duration} className='form-control' placeholder='Date' onChange={handleChange}/>
+
             <button  className='btn btn-primary' style={{marginTop:"10px"}}  onClick={clickHandler}>
                 Add To Do
 
@@ -69,27 +76,52 @@ const Todo = () => {
         <div className='row'>
 
             <div className='col-6 offset-3'>
-                {
-                    tasks.map((ele,i)=>(
-                        <div key={i}>
-                        <li>
-                            Name - {ele.task}
-                            Pending Date - {ele.date}
-                        </li>
-                        <button onClick={()=>deleteTask(i)} className='btn btn-danger' >
-                            Delete Task
+             
 
-                        </button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Task</th>
+      <th scope="col">Creator</th>
+      <th scope="col">Date</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Delete</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      {
+          tasks.map((ele,i)=>(
+              <tr>
+                  <td>{i+1}</td>
+                  <td>{ele.task}</td>
+                  <td>{ele.date}</td>
+                  <td>{ele.creator}</td>
+                  <td>{ele.duration}</td>
+                  <td><button onClick={()=>deleteTask(i)} className="btn btn-danger">
+                      Delete Task
+                      </button></td>
+                  
+
+              </tr>
+
+          ))
+      }
+      
+
+ 
+  </tbody>
+</table>
+                        
                         </div>
 
-                    ))
-                }
+                
 
             </div>
 
 </div>
 
-    </div>
   )
 }
 
