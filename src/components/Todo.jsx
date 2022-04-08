@@ -16,7 +16,11 @@ const Todo = () => {
        // state[event.target.name]=event.target.value;
         setState({...state,[event.target.name]:event.target.value}) // not trigerring the re render
 
+
     }
+
+    // creator
+    // Duration 
 
     const clickHandler=()=>{
         /*
