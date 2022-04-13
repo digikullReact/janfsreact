@@ -6,6 +6,8 @@ import About from './components/About'
 import Header from './components/Header'
 import Show from './components/Show'
 import Todo from './components/Todo'
+import Lifecycle from './components/Lifecycle'
+import GoogleBooks from './components/GoogleBooks'
 
 function App() {
 
@@ -18,10 +20,16 @@ function App() {
        /**
         *  <Home/>
         *     <Show/>
+        *   <Todo/>
+        * <Lifecycle/>
         */
      }
 
-     <Todo/>
+     <GoogleBooks/>
+
+
+
+   
   
      
  
