@@ -8,6 +8,7 @@ import Show from './components/Show'
 import Todo from './components/Todo'
 import Lifecycle from './components/Lifecycle'
 import GoogleBooks from './components/GoogleBooks'
+import Initalload from './components/Initalload'
 
 function App() {
 
@@ -22,10 +23,12 @@ function App() {
         *     <Show/>
         *   <Todo/>
         * <Lifecycle/>
+        *     <GoogleBooks/>
         */
      }
 
-     <GoogleBooks/>
+<Initalload/>
+ 
 
 
 
