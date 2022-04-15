@@ -10,12 +10,25 @@ import Lifecycle from './components/Lifecycle'
 import GoogleBooks from './components/GoogleBooks'
 import Initalload from './components/Initalload'
 import Demo from './components/Demo'
+import {
+
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
 
 
   return (
     <div className="App">
+
+<Routes>
+      <Route path="/googlebooks" element={<GoogleBooks />} />
+      <Route path="/lifecycle" element={<Lifecycle/>}/>
+
+       
+   
+      </Routes>
      
 
      {
@@ -29,7 +42,7 @@ function App() {
         */
      }
 
-<Lifecycle/>
+
    
 
 

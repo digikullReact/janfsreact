@@ -11,24 +11,28 @@ const Lifecycle = () => {
 
     const [data,setData]=useState([]);
 
+    const apiCall=()=>{
+        let config = {
+            headers: {
+                "Access-Control-Allow-Headers": '*',
+            }
+          }
+    
+        axios.get("https://crudcrud.com/api/9ae2353f325a4279b6a7edb55608aaca/unicorns").then(data=>{
+            //console.log()
+            setData(data["data"])
+        }).catch(err=>{
+            console.log(err);
+        })
+    }
+
 
 useEffect(()=>{
       // So here if you want to do anything when the component is loaded
     // And you want to do that thing only once
     // then you have to run the proces herer
-    let config = {
-        headers: {
-            "Access-Control-Allow-Headers": '*',
-        }
-      }
 
-    axios.get("https://crudcrud.com/api/49e59b101f1f42f58f9663a7bc7d2d2b/unicorns").then(data=>{
-        //console.log()
-        setData(data["data"])
-    }).catch(err=>{
-        console.log(err);
-    })
-
+    apiCall();
 
     //console.log("With array argument")
 
@@ -39,33 +43,8 @@ const handleChange=(event)=>{
 
 }
 
-useEffect(()=>{
-    // updation phase 
-
-    // Do some operation ---->
-    // You make an api call in here 
-    //console.log("Without array argument")
-
-})
 
 
-useEffect(()=>{
-
-    // 
-
-    // So here if you want to do anything when the component is loaded
-    // And you want to do that thing only once
-    // then you have to run the proces herer
-
-    //console.log("With A return statment")
-
-    return ()=>{
-        console.log("Return method called")
-
-
-    }
-
-},[])
 
 const clickHandler=()=>{
 
@@ -75,8 +54,10 @@ const clickHandler=()=>{
         }
       }
       
-   axios.post("https://crudcrud.com/api/49e59b101f1f42f58f9663a7bc7d2d2b/unicorns",config,state).then(data=>{
-       alert("Success")
+   axios.post("https://crudcrud.com/api/9ae2353f325a4279b6a7edb55608aaca/unicorns",config,state).then(data=>{
+       //alert("Success")
+
+       apiCall();
 
        // Once this is success ---
        // We can make an api call again
