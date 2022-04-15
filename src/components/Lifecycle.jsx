@@ -22,7 +22,7 @@ useEffect(()=>{
         }
       }
 
-    axios.get("https://crudcrud.com/api/5f7100112a1a42c39550c4a598b17d5f/unicorns").then(data=>{
+    axios.get("https://crudcrud.com/api/49e59b101f1f42f58f9663a7bc7d2d2b/unicorns").then(data=>{
         //console.log()
         setData(data["data"])
     }).catch(err=>{
@@ -75,7 +75,7 @@ const clickHandler=()=>{
         }
       }
       
-   axios.post("https://crudcrud.com/api/5f7100112a1a42c39550c4a598b17d5f/unicorns",config,state).then(data=>{
+   axios.post("https://crudcrud.com/api/49e59b101f1f42f58f9663a7bc7d2d2b/unicorns",config,state).then(data=>{
        alert("Success")
 
        // Once this is success ---
